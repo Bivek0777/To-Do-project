@@ -76,11 +76,11 @@ export const TodoItem = React.memo(function TodoItem({ todo, onToggle, onDelete,
 
   const dateInfo = getDueDateInfo(todo.dueDate);
 
-  const handleEditSubmit = (title: string, description?: string, category?: TodoCategory, dueDate?: string) => {
+  const handleEditSubmit = (title: string, category: TodoCategory, description?: string, dueDate?: string) => {
     onUpdate(todo.id, {
       title,
       description: description || undefined,
-      category: category || 'other',
+      category,
       dueDate: dueDate || undefined
     });
     setIsEditDialogOpen(false);

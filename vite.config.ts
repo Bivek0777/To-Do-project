@@ -5,6 +5,7 @@ import compression from 'vite-plugin-compression'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/To-Do-project/' : '/',
   plugins: [react(), compression()],
   resolve: {
     alias: {
@@ -14,9 +15,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ["react", "react-dom"],
-          vendor: ["framer-motion", "lucide-react", "sonner"]
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react'
+          }
+          if (
+            id.includes('node_modules/framer-motion') ||
+            id.includes('node_modules/lucide-react') ||
+            id.includes('node_modules/sonner')
+          ) {
+            return 'vendor'
+          }
         }
       }
     }

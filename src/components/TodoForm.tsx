@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Plus, Calendar, Tag, ChevronDown, Check } from 'lucide-react';
+import { Plus, Calendar, Tag, Check } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Badge } from './ui/badge';
 import type { Todo, TodoCategory } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';

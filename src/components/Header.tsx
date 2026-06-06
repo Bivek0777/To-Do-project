@@ -1,4 +1,4 @@
-import { CheckCircle2, ListTodo, Award, Activity } from 'lucide-react';
+import { ListTodo, Activity } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { ThemeToggle } from './ThemeToggle';
 
