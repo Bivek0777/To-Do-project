@@ -5,7 +5,7 @@ import compression from 'vite-plugin-compression'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/To-Do-project/' : '/',
+  base: '/',
   plugins: [react(), compression()],
   resolve: {
     alias: {
